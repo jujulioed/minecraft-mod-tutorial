@@ -1,6 +1,7 @@
 package net.jujulioed.tutorialmod.item;
 
 import net.jujulioed.tutorialmod.TutorialMod;
+import net.jujulioed.tutorialmod.block.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -17,8 +18,12 @@ public class ModCreativeModTabs {
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.SAPHIRE.get()))
                     .title(Component.translatable("creativetab.tutorial_tab"))
                     .displayItems((pParameters, pOutput) -> {
+
                         pOutput.accept(ModItems.SAPHIRE.get());
                         pOutput.accept(ModItems.RAW_SAPHIRE.get());
+
+                        pOutput.accept(ModBlocks.SAPPHIRE_BLOCK.get());
+                        pOutput.accept(ModBlocks.RAW_SAPPHIRE_BLOCK.get());
                     }).build());
 
     public static void register(IEventBus eventBus) {
