@@ -1,4 +1,4 @@
-package net.jujulioed.tutorialmod.item.custom;
+package net.jujulioed.tutorialmod.item;
 
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
