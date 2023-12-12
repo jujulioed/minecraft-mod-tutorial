@@ -2,6 +2,7 @@ package net.jujulioed.tutorialmod.item;
 
 import net.jujulioed.tutorialmod.TutorialMod;
 import net.jujulioed.tutorialmod.item.custom.MetalDetectorItem;
+import net.jujulioed.tutorialmod.item.custom.ModFoods;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -19,6 +20,9 @@ public class ModItems {
 
     public static final RegistryObject<Item> METAL_DETECTOR = ITEMS.register("metal_detector",
             () -> new MetalDetectorItem(new Item.Properties().durability(100)));
+
+    public static final RegistryObject<Item> STRAWBERRY = ITEMS.register("strawberry",
+            () -> new Item(new Item.Properties().food(ModFoods.STRAWBERRY)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
