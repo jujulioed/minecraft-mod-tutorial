@@ -38,6 +38,11 @@ public class ModItemModelProvider extends ItemModelProvider {
         buttonItem(ModBlocks.SAPPHIRE_BUTTON, ModBlocks.SAPPHIRE_BLOCK);
         wallItem(ModBlocks.SAPPHIRE_WALL, ModBlocks.SAPPHIRE_BLOCK);
 
+        handheldItem(ModItems.SAPPHIRE_PICKAXE);
+        handheldItem(ModItems.SAPPHIRE_AXE);
+        handheldItem(ModItems.SAPPHIRE_HOE);
+        handheldItem(ModItems.SAPPHIRE_SHOVEL);
+        handheldItem(ModItems.SAPPHIRE_SWORD);
 
     }
 
@@ -78,5 +83,10 @@ public class ModItemModelProvider extends ItemModelProvider {
                 .texture("wall",  new ResourceLocation(TutorialMod.MOD_ID, "block/" + ForgeRegistries.BLOCKS.getKey(baseBlock.get()).getPath()));
     }
 
+    private ItemModelBuilder handheldItem(RegistryObject<Item> item) {
+        return withExistingParent(item.getId().getPath(),
+                new ResourceLocation("item/handheld")).texture("layer0",
+                new ResourceLocation(TutorialMod.MOD_ID,"item/" + item.getId().getPath()));
+    }
     
 }
