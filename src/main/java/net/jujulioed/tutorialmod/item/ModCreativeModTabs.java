@@ -56,6 +56,8 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModItems.SAPPHIRE_HOE.get());
                         pOutput.accept(ModItems.SAPPHIRE_SWORD.get());
 
+                        pOutput.accept(ModBlocks.GEM_POLISHING_STATION.get());
+
                     }).build());
 
     public static void register(IEventBus eventBus) {

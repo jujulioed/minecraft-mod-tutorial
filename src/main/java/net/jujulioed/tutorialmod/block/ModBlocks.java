@@ -1,6 +1,7 @@
 package net.jujulioed.tutorialmod.block;
 
 import net.jujulioed.tutorialmod.TutorialMod;
+import net.jujulioed.tutorialmod.block.custom.GenPolishingStationBlock;
 import net.jujulioed.tutorialmod.block.custom.SoundBlock;
 import net.jujulioed.tutorialmod.item.ModItems;
 import net.minecraft.sounds.SoundEvent;
@@ -67,6 +68,9 @@ public class ModBlocks {
             () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.AMETHYST).noOcclusion(), BlockSetType.IRON));
     public static final RegistryObject<Block> SAPPHIRE_TRAPDOOR = registerBlock("sapphire_trapdoor",
             () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.AMETHYST).noOcclusion(), BlockSetType.IRON));
+
+    public static final RegistryObject<Block> GEM_POLISHING_STATION = registerBlock("gem_polishing_station",
+            () -> new GenPolishingStationBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {

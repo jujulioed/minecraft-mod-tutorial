@@ -50,6 +50,8 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.SAPPHIRE_FENCE_GATE.get());
         this.dropSelf(ModBlocks.SAPPHIRE_WALL.get());
 
+        this.dropSelf(ModBlocks.GEM_POLISHING_STATION.get());
+
         this.add(ModBlocks.SAPPHIRE_SLAB.get(),
                 block -> createSlabItemTable(ModBlocks.SAPPHIRE_SLAB.get()));
         this.add(ModBlocks.SAPPHIRE_DOOR.get(),

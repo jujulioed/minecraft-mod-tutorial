@@ -2,8 +2,12 @@ package net.jujulioed.tutorialmod;
 
 import com.mojang.logging.LogUtils;
 import net.jujulioed.tutorialmod.block.ModBlocks;
+import net.jujulioed.tutorialmod.block.entity.ModBlockEntities;
 import net.jujulioed.tutorialmod.item.ModCreativeModTabs;
 import net.jujulioed.tutorialmod.item.ModItems;
+import net.jujulioed.tutorialmod.screen.GemPolishingStationScreen;
+import net.jujulioed.tutorialmod.screen.ModMenuTypes;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -29,6 +33,9 @@ public class TutorialMod
         ModCreativeModTabs.register(modEventBus);
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+
+        ModBlockEntities.register(modEventBus);
+        ModMenuTypes.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
@@ -62,9 +69,8 @@ public class TutorialMod
     public static class ClientModEvents
     {
         @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event)
-        {
-
+        public static void onClientSetup(FMLClientSetupEvent event) {
+            MenuScreens.register(ModMenuTypes.GEM_POLISHING_MENU.get(), GemPolishingStationScreen::new);
         }
     }
 }
